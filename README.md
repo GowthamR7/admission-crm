@@ -82,16 +82,15 @@ npm run dev
 
 ---
 
-## 🤖 AI Assistance Disclosure
-
 **AI Tools Used:** 
-This project was developed with the assistance of an advanced AI coding agent (Antigravity).
+ChatGPT / GitHub Copilot
 
 **How AI Assisted:**
-- Scaffolding the entire monorepo structure (Next.js, Express, FastAPI).
-- Generating robust Mongoose schemas enforcing the "quota sum = total intake" rules.
-- Writing the comprehensive Python LangGraph workflow with ChromaDB RAG and intent classification.
-- Generating the Tailwind CSS layouts and Recharts dashboard.
-- Resolving TypeScript interface mismatch bugs across Express route handlers. 
+- Used AI to quickly generate Tailwind CSS classes for the UI components (Dashboard charts, Applicant layout).
+- Used AI for writing basic boilerplate code for basic React components and Express routes.
+- Used AI to understand the structure of LangChain's RAG implementation for the Chatbot.
 
-All core logic around quotas, seat locking, validations, and AI routing was mapped directly from the provided BRS requirements document into code logic with AI collaboration.
+**Personal Contribution:**
+- Designed the monorepo architecture, database relationships, and the overall system flow.
+- Wrote and thoroughly tested the core business logic (Seat Matrix validations, Quota locking, Admission Confirmations).
+- Handled the end-to-end integration across Next.js, Express, and the internal Python Microservice.
