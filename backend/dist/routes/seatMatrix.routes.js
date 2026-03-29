@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const auth_1 = require("../middleware/auth");
+const seatMatrix_controller_1 = require("../controllers/seatMatrix.controller");
+const router = (0, express_1.Router)();
+router.use(auth_1.protect);
+router.route('/').get(seatMatrix_controller_1.getSeatMatrices).post((0, auth_1.authorize)('Admin'), seatMatrix_controller_1.createSeatMatrix);
+router.route('/:id').put((0, auth_1.authorize)('Admin'), seatMatrix_controller_1.updateSeatMatrix);
+router.get('/counters/:programId/:academicYearId', seatMatrix_controller_1.getSeatCounters);
+exports.default = router;

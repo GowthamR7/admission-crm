@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const auth_1 = require("../middleware/auth");
+const admission_controller_1 = require("../controllers/admission.controller");
+const router = (0, express_1.Router)();
+router.use(auth_1.protect);
+router.get('/', admission_controller_1.getAdmissions);
+router.get('/:id', admission_controller_1.getAdmission);
+router.post('/allocate', (0, auth_1.authorize)('Admin', 'AdmissionOfficer'), admission_controller_1.allocateSeat);
+router.put('/:id/confirm', (0, auth_1.authorize)('Admin', 'AdmissionOfficer'), admission_controller_1.confirmAdmission);
+router.put('/:id/status', (0, auth_1.authorize)('Admin', 'AdmissionOfficer'), admission_controller_1.updateAdmissionStatus);
+exports.default = router;
